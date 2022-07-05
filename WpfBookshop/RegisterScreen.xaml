@@ -1,0 +1,21 @@
+﻿<Window x:Class="WpfBookshop.RegisterScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfBookshop"
+        mc:Ignorable="d"
+        Title="Register" Height="450" Width="800" Background="Cornsilk">
+    <Border Background="Peru" CornerRadius="20" Margin="20">
+        <StackPanel>
+            <Label Content="Register" Foreground="Cornsilk" FontSize="25" HorizontalAlignment="Center" Margin="20"></Label>
+            <Label Content="Username" Foreground="Cornsilk" HorizontalAlignment="Center"></Label>
+            <TextBox Name="txtUsername" Background="Bisque" Foreground="Sienna" FontSize="15" Margin="250 0"></TextBox>
+            <Label Content="Password" Foreground="Cornsilk" HorizontalAlignment="Center"></Label>
+            <PasswordBox Name="txtPassword" Background="Bisque" Foreground="Sienna" FontSize="15" Margin="250 0"></PasswordBox>
+            <Button Name="btnSubmitRegister" Content="Submit" Background="Sienna" Margin="300 10" Foreground="Cornsilk" FontSize="15" Click="btnSubmitRegister_Click"></Button>
+            <Label Content="Already have an account? Log in by clicking button below" Foreground="Cornsilk" FontSize="10" HorizontalAlignment="Center" Margin="0,60,0,38"></Label>
+            <Button Name="btnGoLogin" Content="Login" Background="DimGray" Foreground="Cornsilk" FontSize="10" Margin="0,-50,0,0" Height="17" Width="62" Click="OpenLoginScreen"></Button>
+        </StackPanel>
+    </Border>
+</Window>
