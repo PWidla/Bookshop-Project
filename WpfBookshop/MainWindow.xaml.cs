@@ -17,7 +17,7 @@ using System.Windows.Shapes;
 namespace WpfBookshop
 {
     /// <summary>
-    /// Logika interakcji dla klasy MainWindow.xaml
+    ///  Logika interakcji dla klasy MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
