@@ -29,7 +29,7 @@ namespace WpfBookshop
 
             using (BOOKSHOPEntities context = new BOOKSHOPEntities())
             {
-                // Your programmatically created DataGrid is attached to MainGrid here
+                //  Your programmatically created DataGrid is attached to MainGrid here
                 var dg = new DataGrid();
                 this.BooksGrid.Children.Add(dg);
 
