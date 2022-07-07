@@ -6,10 +6,22 @@
         xmlns:local="clr-namespace:WpfBookshop"
         mc:Ignorable="d"
         Title="BOOKSHOP" Height="450" Width="800" Background="Cornsilk">
+    <Window.Resources>
+        <Style TargetType="DataGridColumnHeader">
+            <Setter Property="Background" Value="Brown"></Setter>
+            <Setter Property="Height" Value="30"></Setter>
+            <Setter Property="FontSize" Value="12"></Setter>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+        </Style>
+    </Window.Resources>
     <Border Background="Peru" CornerRadius="20" Margin="20">
         <StackPanel>
             <Label Content="AVAILABLE BOOKS" Foreground="Cornsilk" HorizontalAlignment="Center" FontSize="22"/>
-            <DataGrid x:Name="BooksGrid" Height="200"  d:ItemsSource="{d:SampleData ItemCount=5}" Width="500" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,30,0,0"/>
+            <DataGrid AutoGenerateColumns="True" AutoGeneratingColumn="DG_AutoGeneratingColumn" ColumnWidth="*" x:Name="BooksGrid" Height="200"  d:ItemsSource="{d:SampleData ItemCount=5}" Width="500" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,30,0,0">
+                
+            </DataGrid>
         </StackPanel>
     </Border>
 </Window>
