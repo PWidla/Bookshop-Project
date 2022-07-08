@@ -57,9 +57,11 @@ namespace WpfBookshop
         private void btn_Reserve_Click(object sender, RoutedEventArgs e)
         {
             book b = (book)BooksGrid.SelectedItem;
-            MessageBox.Show($"{b.bookID}");
-
-
+            MessageBox.Show($"You just reserved book named '{b.name}', you can collect it tomorrow between 9 A.M and 5 P.M in our bookshop! You can pay with cash only.");
+            BooksList.Remove(b);
+            BooksGrid.ItemsSource = null;
+            BooksGrid.ItemsSource = BooksList;
+            
         }
     }
 }

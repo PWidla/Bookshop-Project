@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="89b0055a6b044cc6a82173d84e68b98e" Name="Diagram1">
         <EntityTypeShape EntityType="BOOKSHOPModel.book" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="BOOKSHOPModel.post" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BOOKSHOPModel.post" Width="1.5" PointX="4.5" PointY="4" IsExpanded="true" />
         <EntityTypeShape EntityType="BOOKSHOPModel.user" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
         <EntityTypeShape EntityType="BOOKSHOPModel.wishlist" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
         <AssociationConnector Association="BOOKSHOPModel.FK_wishlist_books" ManuallyRouted="false" />
