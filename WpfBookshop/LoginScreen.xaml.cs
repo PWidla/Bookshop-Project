@@ -40,7 +40,7 @@ namespace WpfBookshop
                     MessageBox.Show("You logged in successfully.");
                     if (txtUsername.Text == "admin")
                     {
-                        MainWindow mainScreen = new MainWindowAdmin();
+                        MainWindowAdmin mainScreen = new MainWindowAdmin();
                         this.Visibility = Visibility.Hidden;
                         mainScreen.Show();
                     }

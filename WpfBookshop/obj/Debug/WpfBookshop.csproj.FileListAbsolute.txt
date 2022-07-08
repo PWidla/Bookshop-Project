@@ -70,3 +70,7 @@ D:\PATRYK WSEI CLONED\PROJEKT\Bookshop-Project\WpfBookshop\obj\Debug\WpfBookshop
 D:\PATRYK WSEI CLONED\PROJEKT\Bookshop-Project\WpfBookshop\obj\Debug\WpfBookshop.csproj.CopyComplete
 D:\PATRYK WSEI CLONED\PROJEKT\Bookshop-Project\WpfBookshop\obj\Debug\WpfBookshop.exe
 D:\PATRYK WSEI CLONED\PROJEKT\Bookshop-Project\WpfBookshop\obj\Debug\WpfBookshop.pdb
+D:\PATRYK WSEI CLONED\PROJEKT\Bookshop-Project\WpfBookshop\obj\Debug\MainWindowAdmin.g.cs
+D:\PATRYK WSEI CLONED\PROJEKT\Bookshop-Project\WpfBookshop\obj\Debug\PostScreen.g.cs
+D:\PATRYK WSEI CLONED\PROJEKT\Bookshop-Project\WpfBookshop\obj\Debug\MainWindowAdmin.baml
+D:\PATRYK WSEI CLONED\PROJEKT\Bookshop-Project\WpfBookshop\obj\Debug\PostScreen.baml

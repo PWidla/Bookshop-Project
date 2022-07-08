@@ -63,6 +63,13 @@ namespace WpfBookshop
             BooksGrid.ItemsSource = BooksList;
             
         }
+
+        private void btn_Posts_Click(object sender, RoutedEventArgs e)
+        {
+            PostScreen postScreen = new PostScreen();
+            this.Visibility = Visibility.Hidden;
+            postScreen.Show();
+        }
     }
 }
 

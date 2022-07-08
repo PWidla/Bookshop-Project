@@ -79,6 +79,9 @@
     <Compile Include="post.cs">
       <DependentUpon>BookshopModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="PostScreen.xaml.cs">
+      <DependentUpon>PostScreen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RegisterScreen.xaml.cs">
       <DependentUpon>RegisterScreen.xaml</DependentUpon>
     </Compile>
@@ -115,6 +118,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="MainWindowAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PostScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

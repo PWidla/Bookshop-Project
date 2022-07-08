@@ -25,6 +25,7 @@
                 </DataGrid>
             </Grid>
             <Button Name="btn_Reserve" Content="Reserve" Background="DimGray" Foreground="Cornsilk" FontSize="10" Margin="0,30,0,0" Height="17" Width="62" Click="btn_Reserve_Click"></Button>
+            <Button Name="btn_Posts" Content="Show posts" Background="DarkOliveGreen" Foreground="Cornsilk" FontSize="10" Margin="0,30,0,0" Height="17" Width="62" Click="btn_Posts_Click"></Button>
         </StackPanel>
     </Border>
 </Window>
