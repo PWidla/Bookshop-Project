@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,13 +44,22 @@ namespace WpfBookshop
         {
             InitializeComponent();
 
-            
+
 
             using (BOOKSHOPEntities context = new BOOKSHOPEntities())
             {
                 BooksList = context.books.ToList();
             }
             BooksGrid.ItemsSource = BooksList;
+
+        }
+
+        private void btn_Reserve_Click(object sender, RoutedEventArgs e)
+        {
+            book b = (book)BooksGrid.SelectedItem;
+            MessageBox.Show($"{b.bookID}");
+
+
         }
     }
 }
