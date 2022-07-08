@@ -38,9 +38,18 @@ namespace WpfBookshop
                 if (context.users.Any(x => x.username == txtUsername.Text && x.password == txtPassword.Password))
                 {
                     MessageBox.Show("You logged in successfully.");
-                    MainWindow mainScreen = new MainWindow();
-                    this.Visibility = Visibility.Hidden;
-                    mainScreen.Show();
+                    if (txtUsername.Text == "admin")
+                    {
+                        MainWindow mainScreen = new MainWindowAdmin();
+                        this.Visibility = Visibility.Hidden;
+                        mainScreen.Show();
+                    }
+                    else
+                    {
+                        MainWindow mainScreen = new MainWindow();
+                        this.Visibility = Visibility.Hidden;
+                        mainScreen.Show();
+                    }
                 }
                 else
                 {

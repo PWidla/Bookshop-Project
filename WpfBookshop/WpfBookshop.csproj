@@ -73,6 +73,9 @@
     <Compile Include="LoginScreen.xaml.cs">
       <DependentUpon>LoginScreen.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MainWindowAdmin.xaml.cs">
+      <DependentUpon>MainWindowAdmin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="post.cs">
       <DependentUpon>BookshopModel.tt</DependentUpon>
     </Compile>
@@ -111,6 +114,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MainWindowAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="RegisterScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
