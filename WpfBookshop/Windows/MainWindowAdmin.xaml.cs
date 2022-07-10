@@ -69,7 +69,7 @@ namespace WpfBookshop
         {
             PostScreen postScreen = new PostScreen();
             this.Visibility = Visibility.Hidden;
-            postScreen.Show();
+            postScreenAdmin.Show();
         }
 
 

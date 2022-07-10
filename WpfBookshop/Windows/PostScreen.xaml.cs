@@ -29,8 +29,8 @@ namespace WpfBookshop
                 PostsList = context.posts.ToList();
             }
             PostsGrid.ItemsSource = PostsList;
-
         }
+        
 
     }
 }

@@ -1,16 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+
 
 namespace WpfBookshop
 {
@@ -19,6 +9,7 @@ namespace WpfBookshop
     /// </summary>
     public partial class LoginScreen : Window
     {
+        public string LoggedUser { get; private set; }
         public LoginScreen()
         {
             InitializeComponent();
@@ -31,7 +22,7 @@ namespace WpfBookshop
             registerScreen.Show();
         }
 
-        private void btnSubmitLogin_Click(object sender, RoutedEventArgs e)
+        public void btnSubmitLogin_Click(object sender, RoutedEventArgs e)
         {
             using (BOOKSHOPEntities context = new BOOKSHOPEntities())
             {
@@ -50,6 +41,7 @@ namespace WpfBookshop
                         this.Visibility = Visibility.Hidden;
                         mainScreen.Show();
                     }
+                    LoggedUser = txtUsername.Text;
                 }
                 else
                 {
