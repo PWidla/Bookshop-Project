@@ -22,7 +22,12 @@ namespace WpfBookshop
     /// </summary>
     public partial class MainWindow : Window
     {
+        private int IDofUser;
+        public List<wishlist> ListOfWishes;
+
         public List<book> BooksList { get; set; }
+       
+
         private void DG_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
         {
             string headername = e.Column.Header.ToString();
@@ -37,30 +42,37 @@ namespace WpfBookshop
                 // e.Column.Header = "First Name";
                 e.Cancel = true;
             }
-           
+
         }
 
-        public MainWindow()
+        public MainWindow(int IDuser)
         {
             InitializeComponent();
 
-
+            IDofUser = IDuser;
 
             using (BOOKSHOPEntities context = new BOOKSHOPEntities())
             {
                 BooksList = context.books.ToList();
             }
             BooksGrid.ItemsSource = BooksList;
-
         }
 
         private void btn_Reserve_Click(object sender, RoutedEventArgs e)
         {
             book b = (book)BooksGrid.SelectedItem;
             MessageBox.Show($"You just reserved book named '{b.name}', you can collect it tomorrow between 9 A.M and 5 P.M in our bookshop! You can pay with cash only.");
+
+            using (BOOKSHOPEntities context = new BOOKSHOPEntities())
+            {
+                context.wishlists.Add(new wishlist { IDuser = IDofUser, IDbook = b.bookID });
+                ListOfWishes = context.wishlists.ToList();
+            }
+
             BooksList.Remove(b);
             BooksGrid.ItemsSource = null;
             BooksGrid.ItemsSource = BooksList;
+
             
         }
 

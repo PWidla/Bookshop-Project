@@ -37,11 +37,13 @@ namespace WpfBookshop
                     }
                     else
                     {
-                        MainWindow mainScreen = new MainWindow();
+                        int id  = context.users.Where(x => x.username == txtUsername.Text && x.password == txtPassword.Password).Select(x => x.userID).First();
+                        MainWindow mainScreen = new MainWindow(id);
                         this.Visibility = Visibility.Hidden;
                         mainScreen.Show();
                     }
                     LoggedUser = txtUsername.Text;
+
                 }
                 else
                 {
@@ -49,5 +51,7 @@ namespace WpfBookshop
                 }
             }
         }
+
+
     }
 }
