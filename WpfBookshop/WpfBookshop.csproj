@@ -97,6 +97,9 @@
     <Compile Include="wishlist.cs">
       <DependentUpon>BookshopModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Windows\WishlistWindow.xaml.cs">
+      <DependentUpon>WishlistWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="Windows\LoginScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -136,6 +139,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\RegisterScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\WishlistWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

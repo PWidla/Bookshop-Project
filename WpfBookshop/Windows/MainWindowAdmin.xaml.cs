@@ -54,15 +54,7 @@ namespace WpfBookshop
 
         }
 
-        private void btn_Reserve_Click(object sender, RoutedEventArgs e)
-        {
-            book b = (book)BooksGrid.SelectedItem;
-            MessageBox.Show($"You just reserved book named '{b.name}', you can collect it tomorrow between 9 A.M and 5 P.M in our bookshop! You can pay with cash only.");
-            BooksList.Remove(b);
-            BooksGrid.ItemsSource = null;
-            BooksGrid.ItemsSource = BooksList;
-
-        }
+        
 
 
         private void btn_Posts_Click(object sender, RoutedEventArgs e)
@@ -77,6 +69,13 @@ namespace WpfBookshop
             LoginScreen loginScreen = new LoginScreen();
             this.Visibility = Visibility.Hidden;
             loginScreen.Show();
+        }
+
+        private void btn_Wishlist_Click(object sender, RoutedEventArgs e)
+        {
+            WishlistWindow wishlistWindow = new WishlistWindow();
+            this.Visibility = Visibility.Hidden;
+            wishlistWindow.Show();
         }
     }
 }

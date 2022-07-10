@@ -23,7 +23,6 @@ namespace WpfBookshop
     public partial class MainWindow : Window
     {
         private int IDofUser;
-        public List<wishlist> ListOfWishes;
 
         public List<book> BooksList { get; set; }
        
@@ -66,7 +65,7 @@ namespace WpfBookshop
             using (BOOKSHOPEntities context = new BOOKSHOPEntities())
             {
                 context.wishlists.Add(new wishlist { IDuser = IDofUser, IDbook = b.bookID });
-                ListOfWishes = context.wishlists.ToList();
+                context.SaveChanges();
             }
 
             BooksList.Remove(b);

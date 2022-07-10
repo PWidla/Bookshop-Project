@@ -76,3 +76,5 @@ D:\PATRYK WSEI CLONED\PROJEKT\Bookshop-Project\WpfBookshop\bin\Debug\WpfBookshop
 D:\PATRYK WSEI CLONED\PROJEKT\Bookshop-Project\WpfBookshop\obj\Debug\WpfBookshop.g.resources
 D:\PATRYK WSEI CLONED\PROJEKT\Bookshop-Project\WpfBookshop\obj\Debug\WpfBookshop.exe
 D:\PATRYK WSEI CLONED\PROJEKT\Bookshop-Project\WpfBookshop\obj\Debug\WpfBookshop.pdb
+D:\PATRYK WSEI CLONED\PROJEKT\Bookshop-Project\WpfBookshop\obj\Debug\Windows\WishlistWindow.g.cs
+D:\PATRYK WSEI CLONED\PROJEKT\Bookshop-Project\WpfBookshop\obj\Debug\Windows\WishlistWindow.baml
