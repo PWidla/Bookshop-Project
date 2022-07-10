@@ -4,7 +4,7 @@
     <Key>
       <PropertyRef Name="bookID" />
     </Key>
-    <Property Name="bookID" Type="int" Nullable="false" />
+    <Property Name="bookID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="name" Type="varchar" MaxLength="200" Nullable="false" />
     <Property Name="author" Type="varchar" MaxLength="200" Nullable="false" />
   </EntityType>
@@ -12,7 +12,7 @@
     <Key>
       <PropertyRef Name="postID" />
     </Key>
-    <Property Name="postID" Type="int" Nullable="false" />
+    <Property Name="postID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="dataPublished" Type="smalldatetime" Nullable="false" />
     <Property Name="title" Type="varchar" MaxLength="300" Nullable="false" />
     <Property Name="body" Type="varchar" MaxLength="6000" Nullable="false" />
@@ -21,7 +21,7 @@
     <Key>
       <PropertyRef Name="userID" />
     </Key>
-    <Property Name="userID" Type="int" Nullable="false" />
+    <Property Name="userID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="role" Type="varchar" MaxLength="20" Nullable="false" />
@@ -30,7 +30,7 @@
     <Key>
       <PropertyRef Name="wishID" />
     </Key>
-    <Property Name="wishID" Type="int" Nullable="false" />
+    <Property Name="wishID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="IDuser" Type="int" Nullable="false" />
     <Property Name="IDbook" Type="int" Nullable="false" />
   </EntityType>

@@ -30,7 +30,12 @@ namespace WpfBookshop
             }
             PostsGrid.ItemsSource = PostsList;
         }
-        
 
+        private void btn_LogOut_Click(object sender, RoutedEventArgs e)
+        {
+            LoginScreen loginScreen = new LoginScreen();
+            this.Visibility = Visibility.Hidden;
+            loginScreen.Show();
+        }
     }
 }

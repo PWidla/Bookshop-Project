@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\PATRYK WSEI CLONED\PROJEKT\Bookshop-Project\WpfBookshop\App.xaml
-5-1640252993
+6-268323062
 2764493855
-16-1332073030
+17-1453783369
 18434109923
-LoginScreen.xaml;MainWindow.xaml;MainWindowAdmin.xaml;PostScreen.xaml;RegisterScreen.xaml;
+Windows\LoginScreen.xaml;Windows\MainWindow.xaml;Windows\MainWindowAdmin.xaml;Windows\PostScreen.xaml;Windows\PostScreenAdmin.xaml;Windows\RegisterScreen.xaml;
 
-True
+False
 

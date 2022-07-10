@@ -70,6 +70,13 @@ namespace WpfBookshop
             this.Visibility = Visibility.Hidden;
             postScreen.Show();
         }
+
+        private void btn_LogOut_Click(object sender, RoutedEventArgs e)
+        {
+            LoginScreen loginScreen = new LoginScreen();
+            this.Visibility = Visibility.Hidden;
+            loginScreen.Show();
+        }
     }
 }
 

@@ -67,12 +67,17 @@ namespace WpfBookshop
 
         private void btn_Posts_Click(object sender, RoutedEventArgs e)
         {
-            PostScreen postScreen = new PostScreen();
+            PostScreenAdmin postScreenAdmin = new PostScreenAdmin();
             this.Visibility = Visibility.Hidden;
             postScreenAdmin.Show();
         }
 
-
+        private void btn_LogOut_Click(object sender, RoutedEventArgs e)
+        {
+            LoginScreen loginScreen = new LoginScreen();
+            this.Visibility = Visibility.Hidden;
+            loginScreen.Show();
+        }
     }
 }
 

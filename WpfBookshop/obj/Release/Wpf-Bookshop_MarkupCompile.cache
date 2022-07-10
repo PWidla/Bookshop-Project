@@ -1,20 +1,20 @@
-﻿WpfBookshop
+﻿Wpf-Bookshop
 
 
 winexe
 C#
 .cs
-D:\PATRYK WSEI CLONED\PROJEKT\Bookshop-Project\WpfBookshop\obj\Debug\
+D:\PATRYK WSEI CLONED\PROJEKT\Bookshop-Project\WpfBookshop\obj\Release\
 WpfBookshop
 none
 false
-DEBUG;TRACE
+TRACE
 D:\PATRYK WSEI CLONED\PROJEKT\Bookshop-Project\WpfBookshop\App.xaml
 6-268323062
 2764493855
-18759095309
+17-1453783369
 18434109923
 Windows\LoginScreen.xaml;Windows\MainWindow.xaml;Windows\MainWindowAdmin.xaml;Windows\PostScreen.xaml;Windows\PostScreenAdmin.xaml;Windows\RegisterScreen.xaml;
 
-False
+True
 
