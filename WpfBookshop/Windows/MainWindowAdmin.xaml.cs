@@ -23,6 +23,7 @@ namespace WpfBookshop
     public partial class MainWindowAdmin : Window
     {
         public List<book> BooksList { get; set; }
+
         private void DG_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
         {
             string headername = e.Column.Header.ToString();
@@ -30,6 +31,11 @@ namespace WpfBookshop
             //Cancel the column you don't want to generate
             if (headername == "wishlists")
             {
+                e.Cancel = true;
+            }
+            if (headername == "bookID")
+            {
+                // e.Column.Header = "First Name";
                 e.Cancel = true;
             }
             if (headername == "bookID")
@@ -45,11 +51,16 @@ namespace WpfBookshop
             InitializeComponent();
 
 
-
             using (BOOKSHOPEntities context = new BOOKSHOPEntities())
             {
-                BooksList = context.books.ToList();
+                //BooksList = context.books.ToList();
+
+                BooksList =  (from c in context.books
+                        where c.status == "available"
+                        select c).ToList();
+
             }
+
             BooksGrid.ItemsSource = BooksList;
 
         }

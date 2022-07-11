@@ -4,6 +4,7 @@
     <EntitySetMapping Name="books">
       <EntityTypeMapping TypeName="BOOKSHOPModel.book">
         <MappingFragment StoreEntitySet="books">
+          <ScalarProperty Name="status" ColumnName="status" />
           <ScalarProperty Name="bookID" ColumnName="bookID" />
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="author" ColumnName="author" />

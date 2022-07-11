@@ -12,6 +12,7 @@
           <Property Name="bookID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="200" Nullable="false" />
           <Property Name="author" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="status" Type="nchar" MaxLength="11" />
         </EntityType>
         <EntityType Name="posts">
           <Key>
@@ -89,6 +90,7 @@
           <Property Name="name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="author" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="wishlists" Relationship="Self.FK_wishlist_books" FromRole="books" ToRole="wishlist" />
+          <Property Name="status" Type="String" MaxLength="11" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityType Name="post">
           <Key>
@@ -166,6 +168,7 @@
           <EntitySetMapping Name="books">
             <EntityTypeMapping TypeName="BOOKSHOPModel.book">
               <MappingFragment StoreEntitySet="books">
+                <ScalarProperty Name="status" ColumnName="status" />
                 <ScalarProperty Name="bookID" ColumnName="bookID" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="author" ColumnName="author" />

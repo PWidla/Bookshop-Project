@@ -20,10 +20,5 @@ namespace WpfBookshop
     
         public virtual book book { get; set; }
         public virtual user user { get; set; }
-
-        public override string ToString()
-        {
-            return "Book named " + book.name + "was ordered by user" + user.username;
-        }
     }
 }

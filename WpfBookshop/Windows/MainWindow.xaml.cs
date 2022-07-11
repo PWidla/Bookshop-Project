@@ -25,7 +25,8 @@ namespace WpfBookshop
         private int IDofUser;
 
         public List<book> BooksList { get; set; }
-       
+
+
 
         private void DG_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
         {
@@ -41,6 +42,11 @@ namespace WpfBookshop
                 // e.Column.Header = "First Name";
                 e.Cancel = true;
             }
+            if (headername == "status")
+            {
+                // e.Column.Header = "First Name";
+                e.Cancel = true;
+            }
 
         }
 
@@ -52,8 +58,14 @@ namespace WpfBookshop
 
             using (BOOKSHOPEntities context = new BOOKSHOPEntities())
             {
-                BooksList = context.books.ToList();
+                //BooksList = context.books.ToList();
+
+                BooksList =  (from c in context.books
+                        where c.status == "available"
+                        select c).ToList();
+
             }
+
             BooksGrid.ItemsSource = BooksList;
         }
 
@@ -65,10 +77,11 @@ namespace WpfBookshop
             using (BOOKSHOPEntities context = new BOOKSHOPEntities())
             {
                 context.wishlists.Add(new wishlist { IDuser = IDofUser, IDbook = b.bookID });
+                var query = context.books.Single(u => u.bookID == b.bookID);
+                query.status = "unavailable";
                 context.SaveChanges();
             }
 
-            BooksList.Remove(b);
             BooksGrid.ItemsSource = null;
             BooksGrid.ItemsSource = BooksList;
 

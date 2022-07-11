@@ -22,6 +22,7 @@ namespace WpfBookshop
         public int bookID { get; set; }
         public string name { get; set; }
         public string author { get; set; }
+        public string status { get; set; }
     
         public virtual ICollection<wishlist> wishlists { get; set; }
     }
