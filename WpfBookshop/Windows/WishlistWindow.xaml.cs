@@ -17,10 +17,14 @@ namespace WpfBookshop
     /// <summary>
     /// Logika interakcji dla klasy WishlistWindow.xaml
     /// </summary>
+    /// 
+
+
     public partial class WishlistWindow : Window
     {
-
         public List<wishlist> ListOfWishes;
+        public List<string> DataSourceWishes;
+
 
         public WishlistWindow()
         {
@@ -30,8 +34,17 @@ namespace WpfBookshop
             using (BOOKSHOPEntities context = new BOOKSHOPEntities())
             {
                 ListOfWishes = context.wishlists.ToList();
-                lvDataBinding.ItemsSource = ListOfWishes;
+                DataSourceWishes = new List<string>();
+
+                foreach (var w in ListOfWishes)
+                {
+                    var wish = $"Username '{w.user.username}' ordered book '{w.book.name}'.";
+                    MessageBox.Show(wish);
+                    this.DataSourceWishes.Add(wish);
+                }
+                lvDataBinding.ItemsSource = DataSourceWishes;
             }
         }
+
     }
 }

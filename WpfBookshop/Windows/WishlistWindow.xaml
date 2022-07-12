@@ -16,9 +16,9 @@
             <Setter Property="Foreground" Value="White"></Setter>
         </Style>
     </Window.Resources>
-    <Border Background="Peru" CornerRadius="20" Margin="20">
+    <Border Background="Peru" CornerRadius="20  " Margin="20">
         <Grid>
-            <Label Content="ORDERED BOOKS BY CUSTOMERS" Foreground="Cornsilk" HorizontalAlignment="Center" FontSize="22"/>
+            <Label Content="HISTORY OF ORDERING BOOKS BY USERS" Foreground="Cornsilk" HorizontalAlignment="Center" FontSize="22"/>
             <ListView Margin="10" Name="lvDataBinding" Height="200"></ListView>
         </Grid>
     </Border>
