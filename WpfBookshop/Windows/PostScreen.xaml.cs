@@ -19,9 +19,36 @@ namespace WpfBookshop
     /// </summary>
     public partial class PostScreen : Window
     {
-        public List<post> PostsList { get; set; }
-        public PostScreen()
+        private void DG_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
         {
+            string headername = e.Column.Header.ToString();
+
+            //Cancel the column you don't want to generate
+            if (headername == "postID")
+            {
+                e.Cancel = true;
+            }
+            if (headername == "dataPublished")
+            {
+                e.Column.Header = "Date of publication";
+            }
+            if (headername == "title")
+            {
+                e.Column.Header = "Title";
+            }
+            if (headername == "body")
+            {
+                e.Cancel = true;
+            }
+
+
+        }
+
+        public int IDofUser;
+        public List<post> PostsList { get; set; }
+        public PostScreen(int IDuser)
+        {
+            IDofUser = IDuser;
             InitializeComponent();
 
             using (BOOKSHOPEntities context = new BOOKSHOPEntities())
@@ -36,6 +63,13 @@ namespace WpfBookshop
             LoginScreen loginScreen = new LoginScreen();
             this.Visibility = Visibility.Hidden;
             loginScreen.Show();
+        }
+
+        private void Go_back_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainScreen = new MainWindow(IDofUser);
+            this.Visibility = Visibility.Hidden;
+            mainScreen.Show();
         }
     }
 }

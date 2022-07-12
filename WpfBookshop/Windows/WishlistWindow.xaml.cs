@@ -39,12 +39,17 @@ namespace WpfBookshop
                 foreach (var w in ListOfWishes)
                 {
                     var wish = $"Username '{w.user.username}' ordered book '{w.book.name}'.";
-                    MessageBox.Show(wish);
                     this.DataSourceWishes.Add(wish);
                 }
                 lvDataBinding.ItemsSource = DataSourceWishes;
             }
         }
 
+        private void Go_back_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindowAdmin mainScreen = new MainWindowAdmin();
+            this.Visibility = Visibility.Hidden;
+            mainScreen.Show();
+        }
     }
 }

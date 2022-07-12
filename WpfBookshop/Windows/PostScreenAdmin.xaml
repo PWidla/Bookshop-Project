@@ -20,8 +20,17 @@
         <StackPanel>
             <Grid DataContext="MyViewModel">
                 <Label Content="RECENT POSTS" Foreground="Cornsilk" HorizontalAlignment="Center" FontSize="22"/>
-                <DataGrid ItemsSource="{Binding Path=PostsList}" CanUserAddRows="false" AutoGenerateColumns="True" ColumnWidth="*" x:Name="PostsGrid" Height="200"  d:ItemsSource="{d:SampleData ItemCount=2}" Width="500" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,30,0,0">
-
+                <DataGrid ItemsSource="{Binding Path=PostsList}" CanUserAddRows="false" AutoGenerateColumns="True" AutoGeneratingColumn="DG_AutoGeneratingColumn" ColumnWidth="*" x:Name="PostsGrid" Height="200"  d:ItemsSource="{d:SampleData ItemCount=2}" Width="500" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,30,0,0">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="content of post" Binding="{Binding body}">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style>
+                                    <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                                    <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                    </DataGrid.Columns>
                 </DataGrid>
             </Grid>
             <Label Content="Title of post" Width="91" Padding="5,3,16,5"/>
@@ -30,7 +39,8 @@
             <TextBox TextWrapping="Wrap" Name="txtContent" Width="120"/>
             <Button Name="btn_AddPost" Content="Add post" Width="66" Margin="0,20,0,0" Background="BlanchedAlmond" Click="btn_AddPost_Click"/>
             <Button Name="btn_RemovePost"  Content="Remove post" Width="87" Margin="0,10,0,0" Background="Khaki" Click="btn_RemovePost_Click"/>
-            <Button x:Name="btn_LogOut" Content="Log out" Width="56" Margin="0,15,0,0" Background="LightGoldenrodYellow" Click="btn_LogOut_Click"/>
+            <Button x:Name="Go_back" Content="Go back" Margin="0,20,0,25" Width="80" Background="Goldenrod" Click="Go_back_Click"/>
+            <Button x:Name="btn_LogOut" Content="Log out" Width="56" Background="LightGoldenrodYellow" Click="btn_LogOut_Click"/>
         </StackPanel>
     </Border>
 </Window>

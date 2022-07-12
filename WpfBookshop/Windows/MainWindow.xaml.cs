@@ -22,7 +22,7 @@ namespace WpfBookshop
     /// </summary>
     public partial class MainWindow : Window
     {
-        private int IDofUser;
+        public int IDofUser;
 
         public List<book> BooksList { get; set; }
 
@@ -47,6 +47,8 @@ namespace WpfBookshop
                 // e.Column.Header = "First Name";
                 e.Cancel = true;
             }
+            
+
 
         }
 
@@ -90,7 +92,7 @@ namespace WpfBookshop
 
         private void btn_Posts_Click(object sender, RoutedEventArgs e)
         {
-            PostScreen postScreen = new PostScreen();
+            PostScreen postScreen = new PostScreen(IDofUser);
             this.Visibility = Visibility.Hidden;
             postScreen.Show();
         }

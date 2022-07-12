@@ -38,7 +38,7 @@ namespace WpfBookshop
                 // e.Column.Header = "First Name";
                 e.Cancel = true;
             }
-            if (headername == "bookID")
+            if (headername == "status")
             {
                 // e.Column.Header = "First Name";
                 e.Cancel = true;

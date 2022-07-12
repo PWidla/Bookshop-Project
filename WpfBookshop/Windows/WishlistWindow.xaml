@@ -18,8 +18,9 @@
     </Window.Resources>
     <Border Background="Peru" CornerRadius="20  " Margin="20">
         <Grid>
-            <Label Content="HISTORY OF ORDERING BOOKS BY USERS" Foreground="Cornsilk" HorizontalAlignment="Center" FontSize="22"/>
-            <ListView Margin="10" Name="lvDataBinding" Height="200"></ListView>
+            <Label Content="HISTORY OF ORDERING BOOKS BY USERS" Foreground="Cornsilk" HorizontalAlignment="Center" FontSize="22" Margin="0,0,0,88"/>
+            <ListView Margin="10" Name="lvDataBinding" Height="200" HorizontalAlignment="Center"></ListView>
+            <Button x:Name="Go_back" Content="Go back" HorizontalAlignment="Center" Height="22" Margin="0,347,0,0" VerticalAlignment="Top" Width="80" Click="Go_back_Click" Background="Goldenrod"/>
         </Grid>
     </Border>
 </Window>

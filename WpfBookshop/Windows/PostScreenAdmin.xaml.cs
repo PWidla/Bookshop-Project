@@ -19,6 +19,30 @@ namespace WpfBookshop
     /// </summary>
     public partial class PostScreenAdmin : Window
     {
+        private void DG_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            string headername = e.Column.Header.ToString();
+
+            //Cancel the column you don't want to generate
+            if (headername == "postID")
+            {
+                e.Cancel = true;
+            }
+
+            if (headername == "body")
+            {
+                e.Cancel = true;
+            }
+            if (headername == "dataPublished")
+            {
+                e.Column.Header = "Date of publication";
+            }
+            if (headername == "title")
+            {
+                e.Column.Header = "Title";
+            }
+        }
+
         public List<post> PostsList { get; set; }
         public PostScreenAdmin()
         {
@@ -37,6 +61,9 @@ namespace WpfBookshop
             {
                 context.posts.Add(new post { body = txtContent.Text, title = txtTitle.Text, dataPublished = DateTime.Now });
                 MessageBox.Show("You have added a new post.");
+                txtContent.Text = null;
+                txtTitle.Text = null;
+
                 context.SaveChanges();
                 PostsList = context.posts.ToList();
                 PostsGrid.ItemsSource = null;
@@ -48,7 +75,13 @@ namespace WpfBookshop
         {
             post p = (post)PostsGrid.SelectedItem;
             MessageBox.Show($"You just deleted a post.");
-            PostsList.Remove(p);
+            using (BOOKSHOPEntities context = new BOOKSHOPEntities())
+            {
+                var itemToRemove = context.posts.Single(x => x.postID == p.postID);
+                context.posts.Remove(itemToRemove);
+                context.SaveChanges();
+                PostsList = context.posts.ToList();
+            }
             PostsGrid.ItemsSource = null;
             PostsGrid.ItemsSource = PostsList;
         }
@@ -58,6 +91,13 @@ namespace WpfBookshop
             LoginScreen loginScreen = new LoginScreen();
             this.Visibility = Visibility.Hidden;
             loginScreen.Show();
+        }
+
+        private void Go_back_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindowAdmin mainScreen = new MainWindowAdmin();
+            this.Visibility = Visibility.Hidden;
+            mainScreen.Show();
         }
     }
 }
