@@ -5,16 +5,23 @@ using System.Windows;
 namespace WpfBookshop
 {
     /// <summary>
-    /// Logika interakcji dla klasy LoginScreen.xaml
+    /// Interaction logic for LoginScreen.xaml
     /// </summary>
     public partial class LoginScreen : Window
     {
+        /// <summary>
+        /// Public variable to store data of current logged user
+        /// <param name="LoggedUser">Public variable containing username of current logged user</param>
+        /// </summary>
         public string LoggedUser;
         public LoginScreen()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Change current window to window where user can register a new account
+        /// </summary>
         private void OpenRegisterScreen(object sender, RoutedEventArgs e)
         {
             RegisterScreen registerScreen = new RegisterScreen();
@@ -22,6 +29,9 @@ namespace WpfBookshop
             registerScreen.Show();
         }
 
+        /// <summary>
+        /// Logic of logging in. Checking if user exists in database. If he doesn't, user gets a message informing that he entered incorrect data. If he does, window with list of books opens. If entered data correspond to the administrator's data, admin's version of window with books' list opens.
+        /// </summary>
         public void btnSubmitLogin_Click(object sender, RoutedEventArgs e)
         {
             using (BOOKSHOPEntities context = new BOOKSHOPEntities())
@@ -51,7 +61,5 @@ namespace WpfBookshop
                 }
             }
         }
-
-
     }
 }

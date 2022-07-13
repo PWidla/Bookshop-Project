@@ -12,34 +12,34 @@ namespace WpfBookshop
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// Public variables to store accessible data
+        /// <param name="IDofUser">Public variable containing ID of current logged user</param>
+        /// <param name="BooksList">Public variable containing list of books obtained from database</param>
+        /// </summary>
         public int IDofUser;
-
         public List<book> BooksList = new List<book>();
 
 
-
+        /// <summary>
+        /// Cancel the columns I don't want to generate
+        /// </summary>
         private void DG_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
         {
             string headername = e.Column.Header.ToString();
 
-            //Cancel the column you don't want to generate
             if (headername == "wishlists")
             {
                 e.Cancel = true;
             }
             if (headername == "bookID")
             {
-                // e.Column.Header = "First Name";
                 e.Cancel = true;
             }
             if (headername == "status")
             {
-                // e.Column.Header = "First Name";
                 e.Cancel = true;
             }
-            
-
-
         }
 
         public MainWindow(int IDuser)
@@ -48,6 +48,9 @@ namespace WpfBookshop
 
             IDofUser = IDuser;
 
+            /// <summary>
+            /// Connect to database and get data, then fill list with it
+            /// </summary>
             using (BOOKSHOPEntities context = new BOOKSHOPEntities())
             {
                 BooksList =  (from c in context.books
@@ -59,6 +62,9 @@ namespace WpfBookshop
             BooksGrid.ItemsSource = BooksList;
         }
 
+        /// <summary>
+        /// Reserve button logic. Changing value of status of selected book and refreshing datagrid
+        /// </summary>
         private void btn_Reserve_Click(object sender, RoutedEventArgs e)
         {
             book b = (book)BooksGrid.SelectedItem;
@@ -79,6 +85,9 @@ namespace WpfBookshop
             BooksGrid.ItemsSource = BooksList;
         }
 
+        /// <summary>
+        /// Change current window to window with posts data
+        /// </summary>
         private void btn_Posts_Click(object sender, RoutedEventArgs e)
         {
             PostScreen postScreen = new PostScreen(IDofUser);
@@ -86,6 +95,9 @@ namespace WpfBookshop
             postScreen.Show();
         }
 
+        /// <summary>
+        /// Log out, come back to login screen
+        /// </summary>
         private void btn_LogOut_Click(object sender, RoutedEventArgs e)
         {
             LoginScreen loginScreen = new LoginScreen();

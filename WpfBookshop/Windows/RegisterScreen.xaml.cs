@@ -13,6 +13,9 @@ namespace WpfBookshop
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Change current window to window where user can log in
+        /// </summary>
         private void OpenLoginScreen(object sender, RoutedEventArgs e)
         {
             LoginScreen loginScreen = new LoginScreen();
@@ -20,6 +23,9 @@ namespace WpfBookshop
             loginScreen.Show();
         }
 
+        // <summary>
+        /// Logic for registering new user
+        /// </summary>
         private void btnSubmitRegister_Click(object sender, RoutedEventArgs e)
         {
             using (BOOKSHOPEntities context = new BOOKSHOPEntities())

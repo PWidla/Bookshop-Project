@@ -11,11 +11,13 @@ namespace WpfBookshop
     /// </summary>
     public partial class PostScreenAdmin : Window
     {
+        /// <summary>
+        /// Cancel the columns I don't want to generate
+        /// </summary>
         private void DG_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
         {
             string headername = e.Column.Header.ToString();
 
-            //Cancel the column you don't want to generate
             if (headername == "postID")
             {
                 e.Cancel = true;
@@ -35,12 +37,19 @@ namespace WpfBookshop
             }
         }
 
+        /// <summary>
+        /// Public list to store accessible data
+        /// <param name="PostsList">Public variable containing list of posts obtained from database</param>
+        /// </summary>
         public List<post> PostsList = new List<post>();
 
         public PostScreenAdmin()
         {
             InitializeComponent();
 
+            /// <summary>
+            /// Connect to database and get data, then fill datagrid of posts with it
+            /// </summary>
             using (BOOKSHOPEntities context = new BOOKSHOPEntities())
             {
                 PostsList = context.posts.ToList();
@@ -48,6 +57,9 @@ namespace WpfBookshop
             PostsGrid.ItemsSource = PostsList;
         }
 
+        /// <summary>
+        /// Logic of adding new post 
+        /// </summary>
         private void btn_AddPost_Click(object sender, RoutedEventArgs e)
         {
             using (BOOKSHOPEntities context = new BOOKSHOPEntities())
@@ -64,6 +76,9 @@ namespace WpfBookshop
             }
         }
 
+        /// <summary>
+        /// Logic of removing selected post 
+        /// </summary>
         private void btn_RemovePost_Click(object sender, RoutedEventArgs e)
         {
             post p = (post)PostsGrid.SelectedItem;
@@ -79,6 +94,9 @@ namespace WpfBookshop
             PostsGrid.ItemsSource = PostsList;
         }
 
+        /// <summary>
+        /// Log out, come back to login screen
+        /// </summary>
         private void btn_LogOut_Click(object sender, RoutedEventArgs e)
         {
             LoginScreen loginScreen = new LoginScreen();
@@ -86,6 +104,9 @@ namespace WpfBookshop
             loginScreen.Show();
         }
 
+        /// <summary>
+        /// Goes back to window with list of books
+        /// </summary>
         private void Go_back_Click(object sender, RoutedEventArgs e)
         {
             MainWindowAdmin mainScreen = new MainWindowAdmin();

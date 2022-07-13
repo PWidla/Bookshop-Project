@@ -33,9 +33,8 @@
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
-            <Button x:Name="btn_LogOut" Content="Log out" Width="56" Margin="0,45,0,0" Background="LightGoldenrodYellow" Click="btn_LogOut_Click"/>
             <Button x:Name="Go_back" Content="Go back" Width="80" Margin="0,20,0,0" Click="Go_back_Click" Background="Goldenrod"/>
-
+            <Button x:Name="btn_LogOut" Content="Log out" Width="56" Margin="0,45,0,0" Background="LightGoldenrodYellow" Click="btn_LogOut_Click"/>
         </StackPanel>
     </Border>
 </Window>

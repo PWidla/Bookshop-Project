@@ -8,28 +8,29 @@ namespace WpfBookshop
 {
     /// <summary>
     ///  Interaction logic for MainWindow.xaml
+    /// <param name="BooksList">Public variable containing list of books obtained from database</param>
     /// </summary>
     public partial class MainWindowAdmin : Window
     {
         public List<book> BooksList { get; set; }
 
+        /// <summary>
+        /// Cancel the columns I don't want to generate
+        /// </summary>
         private void DG_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
         {
             string headername = e.Column.Header.ToString();
 
-            //Cancel the column you don't want to generate
             if (headername == "wishlists")
             {
                 e.Cancel = true;
             }
             if (headername == "bookID")
             {
-                // e.Column.Header = "First Name";
                 e.Cancel = true;
             }
             if (headername == "status")
             {
-                // e.Column.Header = "First Name";
                 e.Cancel = true;
             }
 
@@ -39,24 +40,24 @@ namespace WpfBookshop
         {
             InitializeComponent();
 
-
+            /// <summary>
+            /// Connection to database. Fill datagrid with available books' data
+            /// </summary>
             using (BOOKSHOPEntities context = new BOOKSHOPEntities())
             {
-                //BooksList = context.books.ToList();
-
                 BooksList =  (from c in context.books
                         where c.status == "available"
                         select c).ToList();
 
             }
-
             BooksGrid.ItemsSource = BooksList;
-
         }
 
-        
 
 
+        /// <summary>
+        /// Change current window to window with posts data
+        /// </summary>
         private void btn_Posts_Click(object sender, RoutedEventArgs e)
         {
             PostScreenAdmin postScreenAdmin = new PostScreenAdmin();
@@ -64,6 +65,9 @@ namespace WpfBookshop
             postScreenAdmin.Show();
         }
 
+        /// <summary>
+        /// Log out, come back to login screen.
+        /// </summary>
         private void btn_LogOut_Click(object sender, RoutedEventArgs e)
         {
             LoginScreen loginScreen = new LoginScreen();
@@ -71,6 +75,9 @@ namespace WpfBookshop
             loginScreen.Show();
         }
 
+        /// <summary>
+        /// Change current window to window with reservations data
+        /// </summary>
         private void btn_Wishlist_Click(object sender, RoutedEventArgs e)
         {
             WishlistWindow wishlistWindow = new WishlistWindow();
