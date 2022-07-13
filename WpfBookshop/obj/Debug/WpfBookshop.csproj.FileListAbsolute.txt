@@ -78,3 +78,4 @@ D:\PATRYK WSEI CLONED\PROJEKT\Bookshop-Project\WpfBookshop\obj\Debug\WpfBookshop
 D:\PATRYK WSEI CLONED\PROJEKT\Bookshop-Project\WpfBookshop\obj\Debug\WpfBookshop.pdb
 D:\PATRYK WSEI CLONED\PROJEKT\Bookshop-Project\WpfBookshop\obj\Debug\Windows\WishlistWindow.g.cs
 D:\PATRYK WSEI CLONED\PROJEKT\Bookshop-Project\WpfBookshop\obj\Debug\Windows\WishlistWindow.baml
+D:\PATRYK WSEI CLONED\PROJEKT\Bookshop-Project\WpfBookshop\obj\Debug\App.baml

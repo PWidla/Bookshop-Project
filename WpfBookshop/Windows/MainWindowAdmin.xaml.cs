@@ -54,7 +54,6 @@ namespace WpfBookshop
         }
 
 
-
         /// <summary>
         /// Change current window to window with posts data
         /// </summary>
@@ -83,6 +82,25 @@ namespace WpfBookshop
             WishlistWindow wishlistWindow = new WishlistWindow();
             this.Visibility = Visibility.Hidden;
             wishlistWindow.Show();
+        }
+
+        /// <summary>
+        /// Add new book to database and refresh grid
+        /// </summary>
+        private void btn_AddBook_Click(object sender, RoutedEventArgs e)
+        {
+            using (BOOKSHOPEntities context = new BOOKSHOPEntities())
+            {
+                context.books.Add(new book { name = txtBook.Text, author = txtAuthor.Text, status = "available" });
+                MessageBox.Show("You have added a new book to list of available books.");
+                context.SaveChanges();
+
+                BooksList = (from c in context.books
+                             where c.status == "available"
+                             select c).ToList();
+            }
+            BooksGrid.ItemsSource = BooksList;
+
         }
     }
 }
