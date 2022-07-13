@@ -1,30 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace WpfBookshop
 {
     /// <summary>
-    ///  Logika interakcji dla klasy MainWindow.xaml
+    ///  Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
         public int IDofUser;
 
-        public List<book> BooksList { get; set; }
+        public List<book> BooksList = new List<book>();
 
 
 
@@ -60,8 +50,6 @@ namespace WpfBookshop
 
             using (BOOKSHOPEntities context = new BOOKSHOPEntities())
             {
-                //BooksList = context.books.ToList();
-
                 BooksList =  (from c in context.books
                         where c.status == "available"
                         select c).ToList();
@@ -82,12 +70,13 @@ namespace WpfBookshop
                 var query = context.books.Single(u => u.bookID == b.bookID);
                 query.status = "unavailable";
                 context.SaveChanges();
-            }
 
+                BooksList = (from c in context.books
+                             where c.status == "available"
+                             select c).ToList();
+            }
             BooksGrid.ItemsSource = null;
             BooksGrid.ItemsSource = BooksList;
-
-            
         }
 
         private void btn_Posts_Click(object sender, RoutedEventArgs e)

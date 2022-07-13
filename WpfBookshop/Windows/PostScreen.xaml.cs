@@ -1,21 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace WpfBookshop
 {
     /// <summary>
-    /// Logika interakcji dla klasy PostScreen.xaml
+    /// Interaction logic for PostScreen.xaml
     /// </summary>
     public partial class PostScreen : Window
     {
@@ -23,7 +14,10 @@ namespace WpfBookshop
         {
             string headername = e.Column.Header.ToString();
 
-            //Cancel the column you don't want to generate
+            /// <summary>
+            ///  Canceling the columns I don't want to generate
+            /// </summary>
+            
             if (headername == "postID")
             {
                 e.Cancel = true;
@@ -45,7 +39,7 @@ namespace WpfBookshop
         }
 
         public int IDofUser;
-        public List<post> PostsList { get; set; }
+        public List<post> PostsList = new List<post>();
         public PostScreen(int IDuser)
         {
             IDofUser = IDuser;

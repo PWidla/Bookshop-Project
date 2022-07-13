@@ -9,7 +9,7 @@ namespace WpfBookshop
     /// </summary>
     public partial class LoginScreen : Window
     {
-        public string LoggedUser { get; private set; }
+        public string LoggedUser;
         public LoginScreen()
         {
             InitializeComponent();

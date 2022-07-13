@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfBookshop"
         mc:Ignorable="d"
-        Title="Register" Height="450" Width="800" Background="Cornsilk">
+        Title="BOOKSHOP" Height="450" Width="800" Background="Cornsilk">
     <Border Background="Peru" CornerRadius="20" Margin="20">
         <StackPanel>
             <Label Content="Register" Foreground="Cornsilk" FontSize="25" HorizontalAlignment="Center" Margin="20"></Label>

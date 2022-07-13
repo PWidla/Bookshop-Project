@@ -20,9 +20,7 @@
         <StackPanel>
             <Grid DataContext="MyViewModel">
                 <Label Content="AVAILABLE BOOKS" Foreground="Cornsilk" HorizontalAlignment="Center" FontSize="22"/>
-                <DataGrid ItemsSource="{Binding Path=BooksList}" SelectedItem="{Binding Path=SelectedBook, Mode=TwoWay}" CanUserAddRows="false" AutoGenerateColumns="True" AutoGeneratingColumn="DG_AutoGeneratingColumn" ColumnWidth="*" x:Name="BooksGrid" Height="200"  d:ItemsSource="{d:SampleData ItemCount=5}" Width="500" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,30,0,0">
-
-                </DataGrid>
+                <DataGrid ItemsSource="{Binding Path=BooksList}" SelectedItem="{Binding Path=SelectedBook, Mode=TwoWay}" CanUserAddRows="false" AutoGenerateColumns="True" AutoGeneratingColumn="DG_AutoGeneratingColumn" ColumnWidth="*" x:Name="BooksGrid" Height="200"  d:ItemsSource="{d:SampleData ItemCount=5}" Width="500" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,30,0,0"></DataGrid>
             </Grid>
             <Button Name="btn_Reserve" Content="Reserve" Background="DimGray" Foreground="Cornsilk" FontSize="10" Margin="0,30,0,0" Height="17" Width="62" Click="btn_Reserve_Click"></Button>
             <Button Name="btn_Posts" Content="Show posts" Background="DarkOliveGreen" Foreground="Cornsilk" FontSize="10" Margin="0,30,0,0" Height="17" Width="62" Click="btn_Posts_Click"></Button>
