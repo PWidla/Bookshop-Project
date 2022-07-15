@@ -34,6 +34,10 @@ namespace WpfBookshop
                 {
                     MessageBox.Show("This username is already used.");
                 }
+                else if (string.IsNullOrWhiteSpace(txtUsername.Text) == true || string.IsNullOrWhiteSpace(txtPassword.Password) == true)
+                {
+                    MessageBox.Show("Neither login nor password can be empty.");
+                }
                 else
                 {
                     context.users.Add(new user { username = txtUsername.Text, password = txtPassword.Password, role = "Client" });
