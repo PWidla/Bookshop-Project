@@ -53,5 +53,5 @@
 
 **ORM + operacje na bazie**
 - Dodawanie rekordów do bazy
-- Usuwanie rekordów
-- Pobieranie rekordów jako dane
+- Usuwanie rekordów z bazy
+- Pobieranie danych z bazy
