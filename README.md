@@ -42,3 +42,16 @@
 - Tabela zawierająca historię rezerwacji
 - Przycisk powrotu do okna z listą książek
 - Przycisk wylogowania
+
+
+##Technicznie:
+**Baza danych**
+- Tabela "users"
+- Tabela "books"
+- Tabela "wishlist"
+- Tabela "posts"
+
+**ORM + operacje na bazie**
+- Dodawanie rekordów do bazy
+- Usuwanie rekordów
+- Pobieranie rekordów jako dane
