@@ -44,7 +44,7 @@
 - Przycisk wylogowania
 
 
-## Technicznie:
+## Technicznie
 **Baza danych**
 - Tabela "users"
 - Tabela "books"
