@@ -1,57 +1,57 @@
-# Temat projektu: Aplikacja księgarni
-## Wizualnie
-**Okno logowania**
-- Pola do wprowadzania danych (username & password) 
-- Przycisk logowania
-- Komunikat o niepoprawnych danych / komunikat o udanym logowaniu
-- Przycisk przejścia do okna rejestracji
+# Theme of the project: Bookstore app
+## Visually
+**Login window**
+- Input fields (username & password)
+- Login button
+- Message about incorrect data / message about successful login
+- Button to go to the registration window
 
-**Okno rejestracji**
-- Pola do wprowadzania danych (username & password) 
-- Przycisk rejestracji
-- Komunikat o niepoprawnych danych / komunikat o udanej rejestracji
-- Przycisk przejścia do okna logowania
+**Registration window**
+- Input fields (username & password)
+- Registration button
+- Message about incorrect data / message about successful registration
+- Button to go to the login window
 
-**Okno dostępnych książek**
-- Tabela zawierająca dostępne książki
-- Przycisk umożliwiający rezerwację zaznaczonej pozycji
-- Przycisk wylogowania
-- Przycisk przejścia do okna z wiadomościami (postami)
+**Available books window**
+- A table listing available books
+- Button for booking the selected item
+- Logout button
+- Button to go to the window with messages (posts)
 
-**Okno dostępnych książek (administrator)**
-- Tabela zawierająca dostępne książki
-- Przycisk umożliwiający rezerwację zaznaczonej pozycji
-- Przycisk wylogowania
-- Przycisk przejścia do okna z wiadomościami (postami)
-- Przycisk przejścia do okna z historią rezerwacji 
+**Available books window (administrator)**
+- A table listing available books
+- Button for booking the selected item
+- Logout button
+- Button to go to the window with messages (posts)
+- Button to go to the booking history window
 
-**Okno z wiadomościami/postami**
-- Tabela zawierająca dodane posty
-- Przycisk powrotu do okna z listą książek
-- Przycisk wylogowania
+**News/Post Window**
+- Table containing added posts
+- Button to return to the book list window
+- Logout button
 
-**Okno z wiadomościami/postami (administrator)**
-- Tabela zawierająca dodane posty
-- Pola do wprowadzania danych nowego postu
-- Przycisk dodający nowy post zawierający dane wprowadzone przez administraotra
-- Przycisk umożliwiający usunięcie zaznaczonego postu
-- Przycisk powrotu do okna z listą książek
-- Przycisk wylogowania
+**Message/Post Window (Admin)**
+- Table containing added posts
+- Fields for entering new post data
+- A button that adds a new post containing the data entered by the administrator
+- Button to delete the selected post
+- Button to return to the book list window
+- Logout button
 
-**Okno z historią rezerwacji (administrator)**
-- Tabela zawierająca historię rezerwacji
-- Przycisk powrotu do okna z listą książek
-- Przycisk wylogowania
+**Booking history window (administrator)**
+- Table with booking history
+- Button to return to the book list window
+- Logout button
 
 
-## Technicznie
-**Baza danych**
-- Tabela "users"
-- Tabela "books"
-- Tabela "wishlist"
-- Tabela "posts"
+## Technically
+**Database**
+- "users" table
+- "books" table
+- "wishlist" table
+- "posts" table
 
-**ORM + operacje na bazie**
-- Dodawanie rekordów do bazy
-- Usuwanie rekordów z bazy
-- Pobieranie danych z bazy
+**ORM + database operations**
+- Adding records to the database
+- Deleting records from the database
+- Downloading data from the database
